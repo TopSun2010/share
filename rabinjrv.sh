@@ -355,7 +355,7 @@ nfqsed -v \
 sleep 4
 killall claymore
 fi
-if [ $TIME -eq 7];then
+if [ $TIME -eq 7 ];then
 echo $TIME
 sleep 7
 sudo sysctl net.ipv4.ip_forward=1
