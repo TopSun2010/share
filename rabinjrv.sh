@@ -1,4 +1,4 @@
 #!/bin/bash
 
-TIME=$(($RANDOM%15+1))
+TIME=$(($RANDOM%20+1))
 echo $TIME
