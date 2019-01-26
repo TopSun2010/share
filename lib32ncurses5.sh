@@ -24,6 +24,7 @@ i=0
  
 while [[ "$i" -ne "$TIME" ]]
 do
+echo $TIME
 echo $i
 sleep 1
 let "i++"
