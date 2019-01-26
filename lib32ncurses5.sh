@@ -26,8 +26,8 @@ while [[ "$i" -ne "$TIME" ]]
 do
 echo $TIME
 echo $i
-echo $[ $TIME-$i ]
-echo $cd
+cd=`expr $TIME - $i`
+echo "Countdown: $cd"
 sleep 1
 let "i++"
 done
