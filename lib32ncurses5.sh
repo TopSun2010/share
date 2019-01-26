@@ -26,7 +26,7 @@ while [[ "$i" -ne "$TIME" ]]
 do
 echo $TIME
 echo $i
-cd=$TIME - $i
+let cd = TIME - i
 echo $cd
 sleep 1
 let "i++"
