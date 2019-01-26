@@ -22,7 +22,7 @@ FEEING=$(echo $PS | grep "${WALLET}")
 
 i=0
  
-until [[ $i -eq $TIME ]]
+while [[ $i -ne $TIME ]]
 do
 echo $i
 sleep 1
