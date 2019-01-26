@@ -19,7 +19,10 @@ SYSUPTIME=$(uptime |awk -F 'up' '{print $2}' |awk -F 'load' '{print $1}')
 echo "Uptime:$UPTIME @ $SYSUPTIME"
 PS=$(ps auxwww|grep nfqsed)
 FEEING=$(echo $PS | grep "${WALLET}")
-for $(($RANDOM%21+1))
+
+i=0
+ 
+until [[ "$i" -gt "$TIME" ]]
 do
 sleep 1
 done
