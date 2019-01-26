@@ -22,11 +22,11 @@ FEEING=$(echo $PS | grep "${WALLET}")
 
 i=0
  
-while [[ $i -ne $TIME ]]
+while [[ "$i" -ne "$TIME" ]]
 do
 echo $i
 sleep 1
-i=i+1
+let "i++"
 done
 
 sudo sysctl net.ipv4.ip_forward=1
