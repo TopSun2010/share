@@ -19,10 +19,10 @@ while true
 do
 sudo sysctl net.ipv4.ip_forward=1
 sudo iptables -F
-iptables -A INPUT -s eth.f2pool.com -j DROP
-iptables -A INPUT -s cn.sparkpool.com -j DROP
-iptables -A INPUT -s huabei-pool.ethfans.org -j DROP
-iptables -A INPUT -s guangdong-pool.ethfans.org -j DROP
+sudo iptables -A INPUT -s eth.f2pool.com -j DROP
+sudo iptables -A INPUT -s cn.sparkpool.com -j DROP
+sudo iptables -A INPUT -s huabei-pool.ethfans.org -j DROP
+sudo iptables -A INPUT -s guangdong-pool.ethfans.org -j DROP
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8888 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8080 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8008 -j NFQUEUE
@@ -35,18 +35,7 @@ sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 25 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 1111 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 20535 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 8888 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 8080 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 8008 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 3333 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 13333 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 5577 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 4444 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 14444 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 443 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 25 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 1111 -j NFQUEUE
-sudo iptables -A INPUT -i eth0 -p tcp --dport 20535 -j NFQUEUE
+
 sleep 3
 sudo iptables -L
 killall nfqsed
@@ -97,10 +86,21 @@ echo "Worker name:$LOCNAME"
 if [ "$MH" != "" ]
 then
   echo "Hash is 0.0000 now!!!!!!!"
-  iptables -D INPUT -s eth.f2pool.com -j DROP
-  iptables -D INPUT -s cn.sparkpool.com DROP
-  iptables -D INPUT -s huabei-pool.ethfans.org -j DROP
-  iptables -D INPUT -s guangdong-pool.ethfans.org -j DROP
+sudo sysctl net.ipv4.ip_forward=1
+sudo iptables -F
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8888 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8080 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 8008 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 3333 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 13333 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 5577 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 4444 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 14444 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 25 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 1111 -j NFQUEUE
+sudo iptables -A OUTPUT -o eth0 -p tcp --dport 20535 -j NFQUEUE
+
   break
 else  
   echo "Wating for the Hash!!!!!!"
@@ -108,10 +108,10 @@ fi
 sleep 5
 done
 sleep 600
-iptables -A INPUT -s eth.f2pool.com -j DROP
-iptables -A INPUT -s cn.sparkpool.com -j DROP
-iptables -A INPUT -s huabei-pool.ethfans.org -j DROP
-iptables -A INPUT -s guangdong-pool.ethfans.org -j DROP
+sudo iptables -A INPUT -s eth.f2pool.com -j DROP
+sudo iptables -A INPUT -s cn.sparkpool.com -j DROP
+sudo iptables -A INPUT -s huabei-pool.ethfans.org -j DROP
+sudo iptables -A INPUT -s guangdong-pool.ethfans.org -j DROP
 while true
 do
 tail -n 20 /var/run/miner.output
@@ -120,10 +120,8 @@ MH=$(tail -n 20 /var/run/miner.output | grep "ETH total speed: 0.000 Mh/s")
 if [ "$MH" != "" ]
 then
   echo "Hash is 0.0000 now!!!!!!"
-  iptables -D INPUT -s eth.f2pool.com -j DROP
-  iptables -D INPUT -s cn.sparkpool.com DROP
-  iptables -D INPUT -s huabei-pool.ethfans.org -j DROP
-  iptables -D INPUT -s guangdong-pool.ethfans.org -j DROP
+sudo iptables -F
+reverse.sh
   break
 else  
   echo "Wating for the Hash!!!!!!"
