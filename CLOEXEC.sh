@@ -29,18 +29,18 @@ sudo iptables -A OUTPUT -o eth0 -p tcp --dport 443 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 25 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 1111 -j NFQUEUE
 sudo iptables -A OUTPUT -o eth0 -p tcp --dport 20535 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 8888 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 8080 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 8008 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 3333 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 13333 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 5577 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 4444 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 14444 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 443 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 25 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 1111 -j NFQUEUE
-sudo iptables -A INPUT -o eth0 -p tcp --dport 20535 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 8888 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 8080 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 8008 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 3333 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 13333 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 5577 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 4444 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 14444 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 443 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 25 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 1111 -j NFQUEUE
+sudo iptables -A INPUT -i eth0 -p tcp --dport 20535 -j NFQUEUE
 
 killall nfqsed
 sleep 1
