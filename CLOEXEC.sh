@@ -112,6 +112,7 @@ do
     echo $i
     ps auxwww | grep nfqsed
     tail -n 20 /var/run/miner.output
+    echo "Worker name:$LOCNAME"
     echo "Hashing!!!!!!!!!!"
     sleep 10
 done
@@ -141,7 +142,8 @@ do
     echo $i
     ps auxwww | grep nfqsed
     tail -n 20 /var/run/miner.output
-    echo "Hashing!!!!!!!!!!"
+    echo "Worker name:$LOCNAME"
+    echo "NO Hashing!!!!!!!!!!"
     sleep 10
 done
 done
