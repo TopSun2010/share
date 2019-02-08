@@ -124,7 +124,7 @@ sudo iptables -F
 reverse.sh
   break
 else  
-  echo "Wating for the Hash!!!!!!"
+  echo "Wating for the Hash!!!!!! runing now!!!"
 fi
 sleep 5
 done
