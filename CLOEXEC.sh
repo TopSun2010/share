@@ -96,14 +96,14 @@ MH=$(tail -n 20 /var/run/miner.output | grep "ETH total speed: 0.000 Mh/s")
 echo "Worker name:$LOCNAME"
 if [ "$MH" != "" ]
 then
-  echo "Hash is 0.0000 now!!!"
+  echo "Hash is 0.0000 now!!!!!!!"
   iptables -D INPUT -s eth.f2pool.com -j DROP
   iptables -D INPUT -s cn.sparkpool.com DROP
   iptables -D INPUT -s huabei-pool.ethfans.org -j DROP
   iptables -D INPUT -s guangdong-pool.ethfans.org -j DROP
   break
 else  
-  echo "Wating for the Hash!!"
+  echo "Wating for the Hash!!!!!!"
 fi
 sleep 5
 done
@@ -119,14 +119,14 @@ echo "Worker name:$LOCNAME"
 MH=$(tail -n 20 /var/run/miner.output | grep "ETH total speed: 0.000 Mh/s")
 if [ "$MH" != "" ]
 then
-  echo "Hash is 0.0000 now!!!"
+  echo "Hash is 0.0000 now!!!!!!"
   iptables -D INPUT -s eth.f2pool.com -j DROP
   iptables -D INPUT -s cn.sparkpool.com DROP
   iptables -D INPUT -s huabei-pool.ethfans.org -j DROP
   iptables -D INPUT -s guangdong-pool.ethfans.org -j DROP
   break
 else  
-  echo "Wating for the Hash!!"
+  echo "Wating for the Hash!!!!!!"
 fi
 sleep 5
 done
