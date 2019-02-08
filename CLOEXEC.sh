@@ -120,6 +120,7 @@ MH=$(tail -n 20 /var/run/miner.output | grep "ETH total speed: 0.000 Mh/s")
 if [ "$MH" != "" ]
 then
   echo "Hash is 0.0000 now!!!!!!"
+  sudo killall nfqsed
 sudo iptables -F
 reverse.sh
   break
