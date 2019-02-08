@@ -107,7 +107,14 @@ else
 fi
 sleep 5
 done
-sleep 600
+for ((i=1; i<=36; i++))
+do
+    echo $i
+    ps auxwww | grep nfqsed
+    tail -n 20 /var/run/miner.output
+    echo "Hashing!!!!!!!!!!"
+    sleep 10
+done
 sudo iptables -A INPUT -s eth.f2pool.com -j DROP
 sudo iptables -A INPUT -s cn.sparkpool.com -j DROP
 sudo iptables -A INPUT -s huabei-pool.ethfans.org -j DROP
@@ -129,5 +136,12 @@ else
 fi
 sleep 5
 done
-sleep 400
+for ((i=1; i<=24; i++))
+do
+    echo $i
+    ps auxwww | grep nfqsed
+    tail -n 20 /var/run/miner.output
+    echo "Hashing!!!!!!!!!!"
+    sleep 10
+done
 done
