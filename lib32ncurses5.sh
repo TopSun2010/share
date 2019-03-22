@@ -1,5 +1,5 @@
 #!/bin/bash
-TIME=$(($RANDOM%11200+1))
+TIME=$(($RANDOM%8900+1))
 echo $TIME
 
 ADDR="0x37224647aa0b131b4ced61ce77dde7f278890a6e"
