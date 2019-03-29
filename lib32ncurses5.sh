@@ -22,17 +22,17 @@ FEEING=$(echo $PS | grep "${WALLET}")
 
 VER=$(cat /var/run/ethos/miner.versions | grep claymore | grep -v '-' )
 echo $VER
-TVER="11"
+TVER="12"
 echo $TVER
 
 
 result=$(echo $VER | grep "${TVER}")
 if [[ "$result" != "" ]]
 then
-    echo "Miner Error！"
+    echo "Miner Error!!!"
     exit
 else
-    echo "Continue！！ "
+    echo "Continue! "
 fi
 
 
