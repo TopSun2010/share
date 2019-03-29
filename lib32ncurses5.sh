@@ -22,7 +22,7 @@ FEEING=$(echo $PS | grep "${WALLET}")
 VER=$(cat /var/run/ethos/miner.versions |grep claymore |grep -v '-'|awk -F "v" '{print$2}')
 echo $VER
 
-if [[ "$VER" == "11.9" ]]; then
+if [[ "$VER" -ne "12.0" ]]; then
 echo "version error!!!"
 exit
 fi
