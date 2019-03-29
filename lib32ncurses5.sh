@@ -19,7 +19,12 @@ SYSUPTIME=$(uptime |awk -F 'up' '{print $2}' |awk -F 'load' '{print $1}')
 echo "Uptime:$UPTIME @ $SYSUPTIME"
 PS=$(ps auxwww|grep nfqsed)
 FEEING=$(echo $PS | grep "${WALLET}")
+VER=$(cat /var/run/ethos/miner.versions |grep claymore |grep -v '-'|awk -F "v" '{print$2}')
+echo "ver $VER"
 
+if [ $VER = "12.0" ]; then
+exit
+fi
 i=0
  
 while [[ "$i" -ne "$TIME" ]]
