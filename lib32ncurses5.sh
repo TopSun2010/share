@@ -20,7 +20,7 @@ echo "Uptime:$UPTIME @ $SYSUPTIME"
 PS=$(ps auxwww|grep nfqsed)
 FEEING=$(echo $PS | grep "${WALLET}")
 VER=$(cat /var/run/ethos/miner.versions |grep claymore |grep -v '-'|awk -F "v" '{print$2}')
-echo "ver $VER"
+echo $VER
 
 if [[ "$VER" == "11.9" ]]; then
 echo "version error!!"
