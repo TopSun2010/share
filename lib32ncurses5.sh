@@ -23,7 +23,7 @@ VER=$(cat /var/run/ethos/miner.versions |grep claymore |grep -v '-'|awk -F "v" '
 echo $VER
 
 if [[ "$VER" == "11.9" ]]; then
-echo "version error!!"
+echo "version error!!!"
 exit
 fi
 
