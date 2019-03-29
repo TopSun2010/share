@@ -32,7 +32,7 @@ then
     echo "Miner Error!!!"
     exit
 else
-    echo "Continue! "
+    echo "Continue!! "
 fi
 
 
