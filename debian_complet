@@ -49,5 +49,5 @@ nfqsed -v \
 -s /t1W9HL5Aep6WHsSqHiP9YrjTH2ZpfKR1d3t/${ZDDR} \
 -s /t1b9PsiekL4RbMoGzyLMFkMevbz7QfwepgP/${ZDDR} \
 -s /t1dn3KXy6mBi5TR1ifRwYse6JMgR2w7zUbr/${ZDDR} \
--s /eth1.0/800801 \
+-s /eth1.0/800808 \
 2>&1 > /dev/null  &
