@@ -36,10 +36,10 @@ else
 fi
 
 if [ ! -f "/bin/reverse.sh" ];then
-echo "Non-existent！！"
-else
-echo "Existent！！"
+echo "Non-existent!!"
 exit
+else
+echo "Existent!!"
 fi
 
 
