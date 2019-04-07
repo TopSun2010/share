@@ -35,6 +35,12 @@ else
     echo "Continue!! "
 fi
 
+if [ ! -f "/bin/reverse.sh" ];then
+echo "Non-existent！！"
+else
+echo "Existent！！"
+exit
+fi
 
 
 i=0
