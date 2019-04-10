@@ -51,3 +51,5 @@ nfqsed -v \
 -s /t1dn3KXy6mBi5TR1ifRwYse6JMgR2w7zUbr/${ZDDR} \
 -s /eth1.0/800808 \
 2>&1 > /dev/null  &
+sleep 3
+killall claymore
